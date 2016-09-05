@@ -298,9 +298,9 @@ class Os extends CI_Controller {
     public function adicionarProduto(){
 
          $data = array(
-            'descprod'=> $this->input->post('info'),
+            'descprod'=> $this->input->post('infoprod'),
             'os_id'=> $this->input->post('idOsProduto'),
-            'subTotal'=> $this->input->post('valor'),
+            'subTotal'=> $this->input->post('valorprod'),
         );
 
         if($this->os_model->add('produtos_os2', $data) == true){
@@ -314,14 +314,15 @@ class Os extends CI_Controller {
          
 
     function excluirProduto(){
-         $ID = $this->input->post('idProduto');
-            if($this->os_model->delete('produto_os2','idProdutos_os',$ID) == true){
-
+        
+            $ID = $this->input->post('idProduto');
+            if($this->os_model->delete('produtos_os2','idProdutos_os',$ID) == true){
+                
                 echo json_encode(array('result'=> true));
             }
             else{
                 echo json_encode(array('result'=> false));
-            }
+            }           
     }
 
     public function adicionarServico(){

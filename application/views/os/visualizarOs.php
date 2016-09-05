@@ -102,7 +102,7 @@
                         <table class="table table-bordered" id="tblProdutos">
                                     <thead>
                                         <tr>
-                                            <th>Produto</th>
+                                            <th>Pecas</th>
                                             <th>Sub-total</th>
                                         </tr>
                                     </thead>

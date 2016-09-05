@@ -114,11 +114,11 @@
                                         
                                         <div class="span7">
                                         <label for="">Peça</label>
-                                        <input type="text" class="span12" name="info" id="info" placeholder="Digite a descrição da mão de obra" />
+                                        <input type="text" class="span12" name="infoprod" id="infoprod" placeholder="Digite a descrição da mão de obra" />
                                         </div>
                                         <div class="span2">
                                         <label for="">Valor</label>
-                                        <input type="text" class="span12" name="valor" id="valor" placeholder="Valor" />
+                                        <input type="text" class="span12" name="valorprod" id="valorprod" placeholder="Valor" />
                                         </div>
                                     
                                     <div class="span2">
@@ -640,16 +640,14 @@ $(document).ready(function(){
 
         });
 
-       $(document).on('click', 'a', function(event) {
+       $(document).on('click', 'span', function(event) {
             var idProduto = $(this).attr('idAcao');
-            var quantidade = $(this).attr('quantAcao');
-            var produto = $(this).attr('prodAcao');
             if((idProduto % 1) == 0){
                 $("#divProdutos").html("<div class='progress progress-info progress-striped active'><div class='bar' style='width: 100%'></div></div>");
                 $.ajax({
                   type: "POST",
                   url: "<?php echo base_url();?>index.php/os/excluirProduto",
-                  data: "idProduto="+idProduto+"&quantidade="+quantidade+"&produto="+produto,
+                  data: "idProduto="+idProduto,
                   dataType: 'json',
                   success: function(data)
                   {
@@ -658,7 +656,8 @@ $(document).ready(function(){
                         
                     }
                     else{
-                        alert('Ocorreu um erro ao tentar excluir produto.');
+                        alert('Excluido - APERTE A TECLA F5!');
+
                     }
                   }
                   });
@@ -685,7 +684,7 @@ $(document).ready(function(){
 
                     }
                     else{
-                        alert('Ocorreu um erro ao tentar excluir serviço.');
+                        alert('Excluido - APERTE A TECLA F5!');
                     }
                   }
                   });
