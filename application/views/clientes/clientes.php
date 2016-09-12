@@ -66,7 +66,7 @@ if(!$results){?>
             echo '<td>'.$r->idClientes.'</td>';
             echo '<td>'.$r->nomeCliente.'</td>';
             echo '<td>'.$r->documento.'</td>';
-            echo '<td>'.$r->telefone.'</td>';
+            echo '<td>'.$r->telefonecli.'</td>';
             echo '<td>';
             if($this->permission->checkPermission($this->session->userdata('permissao'),'vCliente')){
                 echo '<a href="'.base_url().'index.php/clientes/visualizar/'.$r->idClientes.'" style="margin-right: 1%" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>'; 

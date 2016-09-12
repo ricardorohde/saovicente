@@ -55,7 +55,7 @@ class Clientes extends CI_Controller {
         
         $this->pagination->initialize($config); 	
         
-	    $this->data['results'] = $this->clientes_model->get('clientes','idClientes,nomeCliente,documento,telefone,celular,email,rua,numero,bairro,cidade,estado,cep','',$config['per_page'],$this->uri->segment(3));
+	    $this->data['results'] = $this->clientes_model->get('clientes','idClientes,nomeCliente,documento,telefonecli,celular,email,rua,numero,bairro,cidade,estado,cep','',$config['per_page'],$this->uri->segment(3));
        	
        	$this->data['view'] = 'clientes/clientes';
        	$this->load->view('tema/topo',$this->data);
@@ -79,7 +79,7 @@ class Clientes extends CI_Controller {
             $data = array(
                 'nomeCliente' => set_value('nomeCliente'),
                 'documento' => set_value('documento'),
-                'telefone' => set_value('telefone'),
+                'telefonecli' => $this->input->post('telefonecli'),
                 'celular' => $this->input->post('celular'),
                 'email' => set_value('email'),
                 'rua' => set_value('rua'),
@@ -125,7 +125,7 @@ class Clientes extends CI_Controller {
             $data = array(
                 'nomeCliente' => $this->input->post('nomeCliente'),
                 'documento' => $this->input->post('documento'),
-                'telefone' => $this->input->post('telefone'),
+                'telefonecli' => $this->input->post('telefonecli'),
                 'celular' => $this->input->post('celular'),
                 'email' => $this->input->post('email'),
                 'rua' => $this->input->post('rua'),

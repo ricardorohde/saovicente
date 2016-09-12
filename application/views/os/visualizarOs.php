@@ -46,10 +46,9 @@
                                             <li>
                                                 <span><h3>Cliente</h3></span>
                                                 <span style="font-size: 16px; "><?php echo $result->nomeCliente?></span><br/>
-                                                <span style="font-size: 16px; ">CPF: <?php echo $result->documento?><br/>
-                                                    <span style="font-size: 16px; "><?php echo $result->rua?>
-                                                        <span style="font-size: 16px;" >, <?php echo $result->numero?>
-                                                            <span style="font-size: 16px; "> - <?php echo $result->bairro?> Fone: <?php echo $result->telefone?>
+                                                <span style="font-size: 16px; ">CPF: <?php echo $result->documento?></span><br/>
+                                                <span style="font-size: 16px; "><?php echo $result->rua?>, <?php echo $result->numero?> - <?php echo $result->bairro?></span></br> 
+                                                <span style="font-size: 16px; ">Telefone: <?php echo $result->telefonecli?> Celular: <?php echo $result->celular?></span>
                                             </li>
                                         </ul>
                                     </td>

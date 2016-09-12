@@ -58,7 +58,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td style="text-align: right; width: 30%"><strong>Telefone</strong></td>
-                                                    <td><?php echo $result->telefone ?></td>
+                                                    <td><?php echo $result->telefonecli ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align: right"><strong>Celular</strong></td>
@@ -129,7 +129,7 @@
                                     <th>Data Inicial</th>
                                     <th>Data Final</th>
                                     <th>Descricao</th>
-                                    <th>Defeito</th>
+                                    <th>Carro</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -153,7 +153,7 @@
                                     <th>Data Inicial</th>
                                     <th>Data Final</th>
                                     <th>KM / PLACA</th>
-                                    <th>Defeito</th>
+                                    <th>Carro</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -167,7 +167,7 @@
                     echo '<td>' . $dataInicial . '</td>';
                     echo '<td>' . $dataFinal . '</td>';
                     echo '<td>' . $r->descricaoProduto . '</td>';
-                    echo '<td>' . $r->defeito . '</td>';
+                    echo '<td>' . $r->observacoes . '</td>';
 
                     echo '<td>';
                     if($this->permission->checkPermission($this->session->userdata('permissao'),'vOs')){

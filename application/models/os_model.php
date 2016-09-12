@@ -116,7 +116,7 @@ class Os_model extends CI_Model {
         $query = $this->db->get('clientes');
         if($query->num_rows > 0){
             foreach ($query->result_array() as $row){
-                $row_set[] = array('label'=>$row['nomeCliente'].' | Telefone: '.$row['telefone'],'id'=>$row['idClientes']);
+                $row_set[] = array('label'=>$row['nomeCliente'].' | Telefone: '.$row['telefonecli'],'id'=>$row['idClientes']);
             }
             echo json_encode($row_set);
         }
