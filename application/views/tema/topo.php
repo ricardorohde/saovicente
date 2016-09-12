@@ -168,7 +168,7 @@
 </div>
 <!--Footer-part-->
 <div class="row-fluid">
-  <div id="footer" class="span12"> 2016 &copy; SISTEMA MECÂNICA SÃO VICENTE - Todos os direitos reservados (versão 3.0)</div>
+  <div id="footer" class="span12"> 2016 &copy; SISTEMA MECÂNICA SÃO VICENTE - Todos os direitos reservados (versão 3.1)</div>
 </div>
 <!--end-Footer-part-->
 
