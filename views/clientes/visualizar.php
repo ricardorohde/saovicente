@@ -153,7 +153,7 @@
                                     <th>Data Inicial</th>
                                     <th>Data Final</th>
                                     <th>KM / PLACA</th>
-                                    <th>Defeito</th>
+                                    <th>Carro</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -167,7 +167,7 @@
                     echo '<td>' . $dataInicial . '</td>';
                     echo '<td>' . $dataFinal . '</td>';
                     echo '<td>' . $r->descricaoProduto . '</td>';
-                    echo '<td>' . $r->defeito . '</td>';
+                    echo '<td>' . $r->observacoes . '</td>';
 
                     echo '<td>';
                     if($this->permission->checkPermission($this->session->userdata('permissao'),'vOs')){
