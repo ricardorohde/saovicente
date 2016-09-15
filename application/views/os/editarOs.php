@@ -94,7 +94,9 @@
                                     </div>
                                     <div class="span12" style="padding: 1%; margin-left: 0">
                                         <div class="span6 offset3" style="text-align: center">
-                                            
+                                           <?php if($result->faturado == 0){ ?>
+                                                <a href="#modal-faturar" id="btn-faturar" role="button" data-toggle="modal" class="btn btn-success"><i class="icon-file"></i> Faturar</a>
+                                            <?php } ?>
                                             <button class="btn btn-primary" id="btnContinuar"><i class="icon-white icon-ok"></i> Alterar</button>
                                             <a href="<?php echo base_url() ?>index.php/os/visualizar/<?php echo $result->idOs; ?>" class="btn btn-inverse"><i class="icon-eye-open"></i> Visualizar OS</a>
                                             <a href="<?php echo base_url() ?>index.php/os" class="btn"><i class="icon-arrow-left"></i> Voltar</a>
@@ -176,7 +178,7 @@
                                         </div>
                                         <div class="span2">
                                         <label for="">Valor</label>
-                                        <input type="text" class="span12" name="valor" id="valor" placeholder="Valor" />
+                                        <input type="text" class="span12" name="valorsrv" id="valorsrv" placeholder="Valor" />
                                         </div>
                                         
                                     <div class="span2">
@@ -334,40 +336,20 @@
     </div>
     <div class="span12" style="margin-left: 0"> 
       <div class="span4" style="margin-left: 0">  
-        <label for="valorfinal">Valor*</label>
+        <label for="valor">Valor*</label>
         <input type="hidden" id="tipo" name="tipo" value="receita" /> 
-        <input class="span12 money" id="valorfinal" type="text" name="valorfinal" value="<?php echo number_format($total,2); ?> "  />
+        <input class="span12 money" id="valor" type="text" name="valor" value="<?php echo number_format($total,2); ?> "  />
       </div>
       <div class="span4" >
-        <label for="vencimento">Data Vencimento*</label>
+        <label for="vencimento">Data Faturamento*</label>
         <input class="span12 datepicker" id="vencimento" type="text" name="vencimento"  />
       </div>
       
     </div>
     
     <div class="span12" style="margin-left: 0"> 
-      <div class="span4" style="margin-left: 0">
-        <label for="recebido">Recebido?</label>
-        &nbsp &nbsp &nbsp &nbsp <input  id="recebido" type="checkbox" name="recebido" value="1" /> 
-      </div>
-      <div id="divRecebimento" class="span8" style=" display: none">
-        <div class="span6">
-          <label for="recebimento">Data Recebimento</label>
-          <input class="span12 datepicker" id="recebimento" type="text" name="recebimento" /> 
-        </div>
-        <div class="span6">
-          <label for="formaPgto">Forma Pgto</label>
-          <select name="formaPgto" id="formaPgto" class="span12">
-            <option value="Dinheiro">Dinheiro</option>
-            <option value="Cartão de Crédito">Cartão de Crédito</option>
-            <option value="Cheque">Cheque</option>
-            <option value="Boleto">Boleto</option>
-            <option value="Depósito">Depósito</option>
-            <option value="Débito">Débito</option>        
-          </select> 
-      </div>
       
-    </div>
+      
     
     
 </div>
@@ -406,7 +388,7 @@ $(document).ready(function(){
          total_servico = total_servico.replace(',', '' );
          total_servico = parseFloat(total_servico); 
          total_produto = parseFloat(total_produto);
-         $('#valorfinal').val(total_produto + total_servico);
+         $('#valor').val(total_produto + total_servico);
      });
      
      $("#formFaturar").validate({

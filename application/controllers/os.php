@@ -331,7 +331,7 @@ class Os extends CI_Controller {
         $data = array(
             'descricao'=> $this->input->post('info'),
             'os_id'=> $this->input->post('idOsServico'),
-            'totalsrv'=> $this->input->post('valor'),
+            'totalsrv'=> $this->input->post('valorsrv'),
         );
 
         if($this->os_model->add('servicos_os2', $data) == true){
@@ -500,12 +500,6 @@ class Os extends CI_Controller {
 
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
- 
-
-        if ($this->form_validation->run('receita') == false) {
-            $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
-        } else {
-
 
             $vencimento = $this->input->post('vencimento');
             $recebimento = $this->input->post('recebimento');
@@ -550,16 +544,13 @@ class Os extends CI_Controller {
                 echo json_encode($json);
                 die();
             } else {
-                $this->session->set_flashdata('error','Ocorreu um erro ao tentar faturar OS.');
+                $this->session->set_flashdata('error','Ocorreu um erro1 ao tentar faturar OS.');
                 $json = array('result'=>  false);
                 echo json_encode($json);
                 die();
             }
-        }
 
-        $this->session->set_flashdata('error','Ocorreu um erro ao tentar faturar OS.');
-        $json = array('result'=>  false);
-        echo json_encode($json);
+
         
     }
 

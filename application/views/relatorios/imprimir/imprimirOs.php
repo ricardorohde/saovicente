@@ -1,5 +1,5 @@
   <head>
-    <title>Mira Motos</title>
+    <title>São Vicente</title>
     <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.min.css" />
@@ -29,20 +29,23 @@
                       <thead>
                           <tr>
                               <th style="font-size: 1.2em; padding: 5px;">Cliente</th>
-                              <th style="font-size: 1.2em; padding: 5px;">Status</th>
                               <th style="font-size: 1.2em; padding: 5px;">Data</th>
-                              <th style="font-size: 1.2em; padding: 5px;">KM / PLACA</th>
+                              <th style="font-size: 1.2em; padding: 3px;">KM / PLACA</th>
+                              <th style="font-size: 1.2em; padding: 3px;">Carro</th>
+                              <th style="font-size: 1.2em; padding: 3px;">Valor</th>
                           </tr>
                       </thead>
                       <tbody>
                           <?php
+                          $total =0;
                           foreach ($os as $c) {
-
+                              $total += $c->valorTotal;
                               echo '<tr>';
                               echo '<td>' . $c->nomeCliente . '</td>';
-                              echo '<td>' . $c->status . '</td>';
                               echo '<td>' . date('d/m/Y',  strtotime($c->dataInicial)) . '</td>';
                               echo '<td>' . $c->descricaoProduto. '</td>';
+                              echo '<td>' . $c->observacoes . '</td>';
+                              echo '<td>R$ '.number_format($c->valorTotal,2,',','.').'</td>';
                               echo '</tr>';
                           }
                           ?>
@@ -52,6 +55,7 @@
                   </div>
 
               </div>
+                  <h5 style="text-align: right; color: green"><strong>Total Receitas: R$ <?php echo number_format($total,2,',','.') ?></strong></h5>
                   <h5 style="text-align: right">Data do Relatório: <?php echo date('d/m/Y');?></h5>
 
           </div>
