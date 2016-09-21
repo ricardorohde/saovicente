@@ -16,10 +16,10 @@ class Mapos extends CI_Controller {
 
     public function index() {
         
-        $expira = '2016-09-20';
+        $expira = '2016-09-28';
         if($expira < date('Y-m-d')){
                    
-             echo "Sistema Expirado - Contate o responsável Leandro Silveira (19) 99241-7155";
+             echo "Sistema Expirado - Entre em contato com Leandro Silveira (19) 99241-7155";
         }else{
         
         if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){

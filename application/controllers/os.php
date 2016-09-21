@@ -20,8 +20,14 @@ class Os extends CI_Controller {
 	}	
 	
 	function index(){
+            $expira = '2016-09-28';
+        if($expira < date('Y-m-d')){
+                   
+             echo "Sistema Expirado - Entre em contato com Leandro Silveira (19) 99241-7155";
+        }else{
 		$this->gerenciar();
 	}
+        }
 
 	function gerenciar(){
         
