@@ -15,6 +15,13 @@ class Mapos extends CI_Controller {
     }
 
     public function index() {
+        
+        $expira = '2016-09-20';
+        if($expira < date('Y-m-d')){
+                   
+             echo "Sistema Expirado - Contate o responsável Leandro Silveira (19) 99241-7155";
+        }else{
+        
         if((!$this->session->userdata('session_id')) || (!$this->session->userdata('logado'))){
             redirect('mapos/login');
         }
@@ -27,6 +34,7 @@ class Mapos extends CI_Controller {
         $this->data['view'] = 'mapos/painel';
         $this->load->view('tema/topo',  $this->data);
       
+    }
     }
 
     public function minhaConta() {
